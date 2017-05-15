@@ -1,0 +1,18 @@
+
+--- 
+
+version: 0.1
+
+phases:
+  build:
+    commands:
+      - sbt compile
+      - sbt test
+      - sbt universal:packageBin
+      - ls -la target/scala-2.12
+
+artifacts:
+  files:
+    - play-sample-1.0-SNAPSHOT.zip
+  base-directory: target/universal
+
